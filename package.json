@@ -1,0 +1,24 @@
+{
+  "name": "vogelsang-vts-theme",
+  "version": "1.0.0",
+  "description": "VentureTech Solutions WordPress theme with Gutenberg blocks and Tailwind CSS",
+  "scripts": {
+    "dev": "npm run watch:css",
+    "build": "npm run build:css",
+    "watch:css": "tailwindcss -i ./src/styles/main.css -o ./assets/css/style.css --watch",
+    "build:css": "tailwindcss -i ./src/styles/main.css -o ./assets/css/style.css --minify"
+  },
+  "keywords": [
+    "wordpress",
+    "theme",
+    "gutenberg",
+    "tailwind"
+  ],
+  "author": "Matt Vogelsang",
+  "license": "GPL-2.0-or-later",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+}

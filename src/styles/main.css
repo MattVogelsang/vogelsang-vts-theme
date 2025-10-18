@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom VentureTech Solutions styles */
+@layer components {
+  .service-card {
+    @apply bg-vts-panel p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .stat-card {
+    @apply bg-vts-panel rounded-lg p-4 min-w-[10rem] text-center;
+  }
+  
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-vts-accent text-white rounded-lg font-semibold hover:bg-vts-accent/90 transition-colors;
+  }
+  
+  .section-heading {
+    @apply text-2xl md:text-3xl font-semibold mb-6;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
