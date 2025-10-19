@@ -7,6 +7,13 @@ module.exports = {
     './parts/**/*.html',
     './templates/**/*.html'
   ],
+  safelist: [
+    'it-services-layout',
+    'left-services-group',
+    'right-services-group',
+    'left-group-image',
+    'right-group-image'
+  ],
   theme: {
     extend: {
       colors: {
