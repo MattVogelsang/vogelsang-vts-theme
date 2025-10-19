@@ -26,3 +26,403 @@
     text-wrap: balance;
   }
 }
+
+/* Custom Stats Cards to Match Figma Design */
+.stat-card-custom {
+  background: #1A202C !important;
+  border: 2px solid #8FA3B8 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 0 10px rgba(143, 163, 184, 0.3) !important;
+  position: relative !important;
+}
+
+.stat-card-custom h3 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #8FA3B8 !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1 !important;
+}
+
+.stat-card-custom p {
+  font-size: 0.9rem !important;
+  color: #8FA3B8 !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
+
+/* Glow effect for the border */
+.stat-card-custom::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #8FA3B8, #A8B8C8, #8FA3B8);
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+/* Updated Stats Cards - Blue and Bold Text */
+.stat-card-custom {
+  background: #1A202C !important;
+  border: 2px solid #8FA3B8 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 0 10px rgba(143, 163, 184, 0.3) !important;
+  position: relative !important;
+}
+
+.stat-card-custom h3 {
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  color: #0d5a8a !important; /* Blue color */
+  margin: 0 0 8px 0 !important;
+  line-height: 1 !important;
+  font-weight: 800 !important; /* Extra bold */
+}
+
+.stat-card-custom p {
+  font-size: 0.9rem !important;
+  color: #0d5a8a !important; /* Blue color */
+  margin: 0 !important;
+  font-weight: 600 !important; /* Bold */
+}
+
+/* Glow effect for the border */
+.stat-card-custom::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #0d5a8a, #0d5a8a, #0d5a8a);
+  border-radius: 14px;
+  z-index: -1;
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+/* Stats Cards - All Text Blue and Bold */
+.wp-block-group.stat-card {
+  background: #1A202C !important;
+  border: 2px solid #0d5a8a !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 0 10px rgba(13, 90, 138, 0.3) !important;
+}
+
+.wp-block-group.stat-card h3 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #0d5a8a !important; /* Blue numbers */
+  margin: 0 0 8px 0 !important;
+}
+
+.wp-block-group.stat-card p {
+  font-size: 0.9rem !important;
+  color: #0d5a8a !important; /* Blue descriptions */
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+/* Make sure ALL text in stat cards is blue */
+.wp-block-group.stat-card * {
+  color: #0d5a8a !important;
+}
+
+/* Stats Cards - Custom Blue Color #20364E */
+.wp-block-group.stat-card {
+  background: #1A202C !important;
+  border: 2px solid #20364E !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: center !important;
+  box-shadow: 0 0 10px rgba(32, 54, 78, 0.3) !important;
+}
+
+.wp-block-group.stat-card h3 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #20364E !important; /* Your custom blue */
+  margin: 0 0 8px 0 !important;
+}
+
+.wp-block-group.stat-card p {
+  font-size: 0.9rem !important;
+  color: #20364E !important; /* Your custom blue */
+  font-weight: 600 !important;
+  margin: 0 !important;
+}
+
+.wp-block-group.stat-card * {
+  color: #20364E !important; /* All text in your custom blue */
+}
+
+/* Hero Image - Exact Figma Measurements */
+.hero-image-container {
+  position: relative !important;
+  width: 1036px !important;
+  height: 531px !important;
+  margin-top: 97px !important;
+  margin-left: 692px !important;
+  border-radius: 179px 0 0 0 !important; /* Bottom-left radius only */
+  overflow: hidden !important;
+}
+
+.hero-image-container img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 179px 0 0 0 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .hero-image-container {
+    width: 100% !important;
+    max-width: 1036px !important;
+    height: auto !important;
+    margin-left: 0 !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* Mobile Responsive Hero Image */
+.hero-image-container {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1036px !important;
+  height: auto !important;
+  margin: 20px auto !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+.hero-image-container img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 20px !important;
+}
+
+/* Desktop - Figma measurements */
+@media (min-width: 1200px) {
+  .hero-image-container {
+    width: 1036px !important;
+    height: 531px !important;
+    margin-top: 97px !important;
+    margin-left: 692px !important;
+    border-radius: 179px 0 0 0 !important;
+  }
+  
+  .hero-image-container img {
+    height: 531px !important;
+    border-radius: 179px 0 0 0 !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .hero-image-container {
+    width: 100% !important;
+    max-width: 600px !important;
+    height: 300px !important;
+    margin: 40px auto !important;
+    border-radius: 20px !important;
+  }
+  
+  .hero-image-container img {
+    height: 300px !important;
+    border-radius: 20px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hero-image-container {
+    width: 100% !important;
+    height: 250px !important;
+    margin: 20px 0 !important;
+    border-radius: 15px !important;
+  }
+  
+  .hero-image-container img {
+    height: 250px !important;
+    border-radius: 15px !important;
+  }
+}
+
+/* Hero Section Layout - Text Left, Image Right */
+.hero-section {
+  display: flex !important;
+  align-items: center !important;
+  gap: 40px !important;
+  min-height: 600px !important;
+}
+
+.hero-text {
+  flex: 1 !important;
+  max-width: 50% !important;
+  padding-right: 20px !important;
+}
+
+.hero-image {
+  flex: 1 !important;
+  max-width: 50% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+.hero-image img {
+  width: 100% !important;
+  max-width: 500px !important;
+  height: auto !important;
+  border-radius: 20px !important;
+}
+
+/* Mobile - Stack vertically */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column !important;
+    gap: 20px !important;
+    min-height: auto !important;
+  }
+  
+  .hero-text,
+  .hero-image {
+    max-width: 100% !important;
+    padding-right: 0 !important;
+  }
+  
+  .hero-image {
+    justify-content: center !important;
+  }
+}
+
+/* Stats Cards - Exact Design Match */
+.wp-block-group.stat-card {
+  background: #1A202C !important;
+  border: 2px dashed #8FA3B8 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: left !important;
+  box-shadow: 0 0 10px rgba(143, 163, 184, 0.2) !important;
+  margin: 0 10px !important;
+}
+
+.wp-block-group.stat-card h3 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #8FA3B8 !important;
+  margin: 0 0 8px 0 !important;
+  text-align: left !important;
+}
+
+.wp-block-group.stat-card p {
+  font-size: 0.9rem !important;
+  color: #8FA3B8 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Container for horizontal layout */
+.stats-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.stats-container .wp-block-group.stat-card {
+  flex: 1 !important;
+  min-width: 200px !important;
+  margin: 0 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  
+  .stats-container .wp-block-group.stat-card {
+    min-width: 100% !important;
+  }
+}
+
+/* Stats Cards - Clean Design (No Weird Outlines) */
+.wp-block-group.stat-card {
+  background: #1A202C !important;
+  border: 2px dashed #8FA3B8 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  text-align: left !important;
+  margin: 0 10px !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.wp-block-group.stat-card h3 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #8FA3B8 !important;
+  margin: 0 0 8px 0 !important;
+  text-align: left !important;
+}
+
+.wp-block-group.stat-card p {
+  font-size: 0.9rem !important;
+  color: #8FA3B8 !important;
+  font-weight: 400 !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Remove any focus outlines */
+.wp-block-group.stat-card:focus,
+.wp-block-group.stat-card:active,
+.wp-block-group.stat-card:hover {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Container for horizontal layout */
+.stats-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: stretch !important;
+  gap: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.stats-container .wp-block-group.stat-card {
+  flex: 1 !important;
+  min-width: 200px !important;
+  margin: 0 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column !important;
+    gap: 15px !important;
+  }
+  
+  .stats-container .wp-block-group.stat-card {
+    min-width: 100% !important;
+  }
+}

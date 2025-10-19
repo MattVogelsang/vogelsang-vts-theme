@@ -5,16 +5,14 @@
  * Categories: layout
  * Description: Complete VentureTech Solutions homepage layout using core Gutenberg blocks
  */
-
-$image_url = esc_url(get_template_directory_uri() . '/assets/hero-data-wave.jpg');
-
 register_block_pattern(
   'vogelsang-vts/homepage',
-  array(
+  [
     'title'       => __('Homepage Layout – VTS', 'vogelsang-vts'),
     'description' => __('Replica of VentureTech Solutions homepage using core blocks', 'vogelsang-vts'),
-    'categories'  => array('layout'),
-    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white","layout":{"type":"constrained"}} -->
+    'categories'  => ['layout'],
+    'content'     =>
+'<!-- wp:group {"align":"full","className":"bg-vts-primary text-white","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull bg-vts-primary text-white">
 
   <!-- wp:spacer {"height":"2rem"} -->
@@ -40,7 +38,7 @@ register_block_pattern(
         <!-- /wp:paragraph -->
         
         <!-- wp:paragraph {"className":"text-vts-muted text-base md:text-lg leading-relaxed mb-8"} -->
-        <p class="text-vts-muted text-base md:text-lg leading-relaxed mb-8">We specialize in Customer Service, Sales, Marketing, IT, Operations, and Finance, providing staffing solutions tailored to each client needs. Our mission is to elevate both talent and teams, delivering better outcomes through strategic recruitment partnerships.</p>
+        <p class="text-vts-muted text-base md:text-lg leading-relaxed mb-8">We specialize in Customer Service, Sales, Marketing, IT, Operations, and Finance, providing staffing solutions tailored to each client's needs. Our mission is to elevate both talent and teams, delivering better outcomes through strategic recruitment partnerships.</p>
         <!-- /wp:paragraph -->
         
         <!-- Stats Cards -->
@@ -90,7 +88,7 @@ register_block_pattern(
       <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:45%">
         <!-- wp:image {"className":"rounded-lg shadow-2xl w-full"} -->
         <figure class="wp-block-image rounded-lg shadow-2xl w-full">
-          <img src="' . $image_url . '" alt="Data visualization representing technology excellence"/>
+          <img src="' . esc_url(get_template_directory_uri() . '/assets/hero-data-wave.jpg') . '" alt="Data visualization representing technology excellence"/>
         </figure>
         <!-- /wp:image -->
       </div>
@@ -228,6 +226,6 @@ register_block_pattern(
   
 </div>
 <!-- /wp:group -->'
-  )
+  ]
 );
 ?>
