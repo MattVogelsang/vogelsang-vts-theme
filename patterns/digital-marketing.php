@@ -12,7 +12,7 @@ register_block_pattern(
     'title'       => __('Digital Marketing Page Layout', 'vogelsang-vts'),
     'description' => __('Digital Marketing page layout with hero section and services grid', 'vogelsang-vts'),
     'categories'  => array('layout'),
-    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white","layout":{"type":"constrained"}} -->
+    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white"} -->
 <div class="wp-block-group alignfull bg-vts-primary text-white">
 
   <!-- Hero Section -->

@@ -12,7 +12,15 @@ module.exports = {
     'left-services-group',
     'right-services-group',
     'left-group-image',
-    'right-group-image'
+    'right-group-image',
+    'digital-marketing-services',
+    'left-services-column',
+    'right-services-column',
+    'central-image',
+    'technology-tags',
+    'tech-tag',
+    'service-icon',
+    'service-card'
   ],
   theme: {
     extend: {

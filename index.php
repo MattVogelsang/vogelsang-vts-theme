@@ -9,7 +9,12 @@
 get_header();
 ?>
 
-<div class="container mx-auto px-6 py-12 min-h-[60vh]">
+<?php 
+// Remove container for pages to allow full-width layouts
+$container_class = is_page() ? '' : 'container mx-auto px-6 py-12';
+?>
+
+<div class="<?php echo esc_attr($container_class); ?> min-h-[60vh]">
   
   <?php if (have_posts()) : ?>
     
@@ -17,8 +22,13 @@ get_header();
       
       <?php while (have_posts()) : the_post(); ?>
         
-        <article id="post-<?php the_ID(); ?>" <?php post_class('bg-vts-panel rounded-lg p-6 md:p-8'); ?>>
+        <?php 
+        // Remove styling for pages to allow full-width block layouts
+        $article_class = is_page() ? '' : 'bg-vts-panel rounded-lg p-6 md:p-8';
+        ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class($article_class); ?>>
           
+          <?php if (!is_page()) : // Hide header for pages ?>
           <header class="entry-header mb-6">
             <?php
             if (is_singular()) :
@@ -51,6 +61,7 @@ get_header();
               </div>
             <?php endif; ?>
           </header>
+          <?php endif; // End hide header for pages ?>
           
           <?php if (has_post_thumbnail() && !is_singular()) : ?>
             <div class="entry-thumbnail mb-6">
