@@ -248,7 +248,7 @@
     }
   }
 
-  /* Stack columns on mobile */
+  /* Stack columns on mobile - Image on top */
   @media (max-width: 767px) {
     .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
       flex-direction: column !important;
@@ -258,6 +258,15 @@
     .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column {
       flex-basis: 100% !important;
       max-width: 100% !important;
+    }
+    
+    /* Image (second column) appears first on mobile */
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
+      order: 2 !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:last-child {
+      order: 1 !important;
     }
   }
 }
