@@ -2,22 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom VentureTech Solutions styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 @layer components {
-  .service-card {
-    @apply bg-vts-panel p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300;
-  }
-  
-  .stat-card {
-    @apply bg-vts-panel rounded-lg p-4 min-w-[10rem] text-center;
-  }
-  
-  .btn-primary {
-    @apply inline-block px-6 py-3 bg-vts-accent text-white rounded-lg font-semibold hover:bg-vts-accent/90 transition-colors;
-  }
-  
   .section-heading {
     @apply text-2xl md:text-3xl font-semibold mb-6;
+  }
+
+  /* Homepage Stats Cards - High Specificity */
+  .wp-block-group.stat-card {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 20px !important;
+    min-width: 140px !important;
+    flex: 1 !important;
+    background-color: #16263D !important;
+    border-radius: 8px !important;
+    border: 1px solid #20364E !important;
+    border-style: solid !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: box-shadow 0.3s ease !important;
+    margin: 0 !important;
+    outline: none !important;
+  }
+
+  .wp-block-group.stat-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .wp-block-group.stat-card h3 {
+    font-size: 2rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin: 0 0 4px 0 !important;
+    line-height: 1 !important;
+  }
+
+  .wp-block-group.stat-card p {
+    font-size: 0.875rem !important;
+    color: rgb(159 182 200) !important;
+    margin: 0 !important;
+    font-weight: 400 !important;
+  }
+
+  /* Stats container layout - Override WordPress flex layout */
+  .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    margin-top: 32px !important;
+    align-items: stretch !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Override WordPress column styles for stats */
+  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card {
+    flex: 1 1 140px !important;
+    min-width: 140px !important;
+    max-width: none !important;
+  }
+
+  /* Ensure proper spacing and alignment */
+  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:first-child,
+  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:nth-child(2),
+  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:nth-child(3) {
+    flex-basis: auto !important;
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
   }
 
   /* IT Services Layout Grid - More Compact - High Specificity */
@@ -156,406 +214,50 @@
       padding: 1px 0 !important;
     }
   }
-}
 
-/* Custom Stats Cards to Match Figma Design */
-.stat-card-custom {
-  background: #1A202C !important;
-  border: 2px solid #8FA3B8 !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: center !important;
-  box-shadow: 0 0 10px rgba(143, 163, 184, 0.3) !important;
-  position: relative !important;
-}
-
-.stat-card-custom h3 {
-  font-size: 2.5rem !important;
-  font-weight: 700 !important;
-  color: #8FA3B8 !important;
-  margin: 0 0 8px 0 !important;
-  line-height: 1 !important;
-}
-
-.stat-card-custom p {
-  font-size: 0.9rem !important;
-  color: #8FA3B8 !important;
-  margin: 0 !important;
-  font-weight: 400 !important;
-}
-
-/* Glow effect for the border */
-.stat-card-custom::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #8FA3B8, #A8B8C8, #8FA3B8);
-  border-radius: 14px;
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(1px);
-}
-
-/* Updated Stats Cards - Blue and Bold Text */
-.stat-card-custom {
-  background: #1A202C !important;
-  border: 2px solid #8FA3B8 !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: center !important;
-  box-shadow: 0 0 10px rgba(143, 163, 184, 0.3) !important;
-  position: relative !important;
-}
-
-.stat-card-custom h3 {
-  font-size: 2.5rem !important;
-  font-weight: 700 !important;
-  color: #0d5a8a !important; /* Blue color */
-  margin: 0 0 8px 0 !important;
-  line-height: 1 !important;
-  font-weight: 800 !important; /* Extra bold */
-}
-
-.stat-card-custom p {
-  font-size: 0.9rem !important;
-  color: #0d5a8a !important; /* Blue color */
-  margin: 0 !important;
-  font-weight: 600 !important; /* Bold */
-}
-
-/* Glow effect for the border */
-.stat-card-custom::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(45deg, #0d5a8a, #0d5a8a, #0d5a8a);
-  border-radius: 14px;
-  z-index: -1;
-  opacity: 0.6;
-  filter: blur(1px);
-}
-
-/* Stats Cards - All Text Blue and Bold */
-.wp-block-group.stat-card {
-  background: #1A202C !important;
-  border: 2px solid #0d5a8a !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: center !important;
-  box-shadow: 0 0 10px rgba(13, 90, 138, 0.3) !important;
-}
-
-.wp-block-group.stat-card h3 {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #0d5a8a !important; /* Blue numbers */
-  margin: 0 0 8px 0 !important;
-}
-
-.wp-block-group.stat-card p {
-  font-size: 0.9rem !important;
-  color: #0d5a8a !important; /* Blue descriptions */
-  font-weight: 600 !important;
-  margin: 0 !important;
-}
-
-/* Make sure ALL text in stat cards is blue */
-.wp-block-group.stat-card * {
-  color: #0d5a8a !important;
-}
-
-/* Stats Cards - Custom Blue Color #20364E */
-.wp-block-group.stat-card {
-  background: #1A202C !important;
-  border: 2px solid #20364E !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: center !important;
-  box-shadow: 0 0 10px rgba(32, 54, 78, 0.3) !important;
-}
-
-.wp-block-group.stat-card h3 {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #20364E !important; /* Your custom blue */
-  margin: 0 0 8px 0 !important;
-}
-
-.wp-block-group.stat-card p {
-  font-size: 0.9rem !important;
-  color: #20364E !important; /* Your custom blue */
-  font-weight: 600 !important;
-  margin: 0 !important;
-}
-
-.wp-block-group.stat-card * {
-  color: #20364E !important; /* All text in your custom blue */
-}
-
-/* Hero Image - Exact Figma Measurements */
-.hero-image-container {
-  position: relative !important;
-  width: 1036px !important;
-  height: 531px !important;
-  margin-top: 97px !important;
-  margin-left: 692px !important;
-  border-radius: 179px 0 0 0 !important; /* Bottom-left radius only */
-  overflow: hidden !important;
-}
-
-.hero-image-container img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 179px 0 0 0 !important;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .hero-image-container {
+  /* Homepage Hero Section - Force proper column layout */
+  .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 32px !important;
     width: 100% !important;
-    max-width: 1036px !important;
-    height: auto !important;
-    margin-left: 0 !important;
-    margin-top: 20px !important;
+  }
+
+  /* Ensure columns maintain their widths on larger screens */
+  @media (min-width: 768px) {
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+      flex-direction: row !important;
+      gap: 32px !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
+      flex-basis: 55% !important;
+      max-width: 55% !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:last-child {
+      flex-basis: 45% !important;
+      max-width: 45% !important;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+      gap: 48px !important;
+    }
+  }
+
+  /* Stack columns on mobile */
+  @media (max-width: 767px) {
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+      flex-direction: column !important;
+      gap: 24px !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column {
+      flex-basis: 100% !important;
+      max-width: 100% !important;
+    }
   }
 }
-
-/* Mobile Responsive Hero Image */
-.hero-image-container {
-  position: relative !important;
-  width: 100% !important;
-  max-width: 1036px !important;
-  height: auto !important;
-  margin: 20px auto !important;
-  border-radius: 20px !important;
-  overflow: hidden !important;
-}
-
-.hero-image-container img {
-  width: 100% !important;
-  height: auto !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 20px !important;
-}
-
-/* Desktop - Figma measurements */
-@media (min-width: 1200px) {
-  .hero-image-container {
-    width: 1036px !important;
-    height: 531px !important;
-    margin-top: 97px !important;
-    margin-left: 692px !important;
-    border-radius: 179px 0 0 0 !important;
-  }
-  
-  .hero-image-container img {
-    height: 531px !important;
-    border-radius: 179px 0 0 0 !important;
-  }
-}
-
-/* Tablet */
-@media (max-width: 1199px) and (min-width: 768px) {
-  .hero-image-container {
-    width: 100% !important;
-    max-width: 600px !important;
-    height: 300px !important;
-    margin: 40px auto !important;
-    border-radius: 20px !important;
-  }
-  
-  .hero-image-container img {
-    height: 300px !important;
-    border-radius: 20px !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .hero-image-container {
-    width: 100% !important;
-    height: 250px !important;
-    margin: 20px 0 !important;
-    border-radius: 15px !important;
-  }
-  
-  .hero-image-container img {
-    height: 250px !important;
-    border-radius: 15px !important;
-  }
-}
-
-/* Hero Section Layout - Text Left, Image Right */
-.hero-section {
-  display: flex !important;
-  align-items: center !important;
-  gap: 40px !important;
-  min-height: 600px !important;
-}
-
-.hero-text {
-  flex: 1 !important;
-  max-width: 50% !important;
-  padding-right: 20px !important;
-}
-
-.hero-image {
-  flex: 1 !important;
-  max-width: 50% !important;
-  display: flex !important;
-  justify-content: flex-end !important;
-}
-
-.hero-image img {
-  width: 100% !important;
-  max-width: 500px !important;
-  height: auto !important;
-  border-radius: 20px !important;
-}
-
-/* Mobile - Stack vertically */
-@media (max-width: 768px) {
-  .hero-section {
-    flex-direction: column !important;
-    gap: 20px !important;
-    min-height: auto !important;
-  }
-  
-  .hero-text,
-  .hero-image {
-    max-width: 100% !important;
-    padding-right: 0 !important;
-  }
-  
-  .hero-image {
-    justify-content: center !important;
-  }
-}
-
-/* Stats Cards - Exact Design Match */
-.wp-block-group.stat-card {
-  background: #1A202C !important;
-  border: 2px dashed #8FA3B8 !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: left !important;
-  box-shadow: 0 0 10px rgba(143, 163, 184, 0.2) !important;
-  margin: 0 10px !important;
-}
-
-.wp-block-group.stat-card h3 {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #8FA3B8 !important;
-  margin: 0 0 8px 0 !important;
-  text-align: left !important;
-}
-
-.wp-block-group.stat-card p {
-  font-size: 0.9rem !important;
-  color: #8FA3B8 !important;
-  font-weight: 400 !important;
-  margin: 0 !important;
-  text-align: left !important;
-}
-
-/* Container for horizontal layout */
-.stats-container {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: stretch !important;
-  gap: 20px !important;
-  flex-wrap: wrap !important;
-}
-
-.stats-container .wp-block-group.stat-card {
-  flex: 1 !important;
-  min-width: 200px !important;
-  margin: 0 !important;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column !important;
-    gap: 15px !important;
-  }
-  
-  .stats-container .wp-block-group.stat-card {
-    min-width: 100% !important;
-  }
-}
-
-/* Stats Cards - Clean Design (No Weird Outlines) */
-.wp-block-group.stat-card {
-  background: #1A202C !important;
-  border: 2px dashed #8FA3B8 !important;
-  border-radius: 12px !important;
-  padding: 20px !important;
-  text-align: left !important;
-  margin: 0 10px !important;
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-.wp-block-group.stat-card h3 {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #8FA3B8 !important;
-  margin: 0 0 8px 0 !important;
-  text-align: left !important;
-}
-
-.wp-block-group.stat-card p {
-  font-size: 0.9rem !important;
-  color: #8FA3B8 !important;
-  font-weight: 400 !important;
-  margin: 0 !important;
-  text-align: left !important;
-}
-
-/* Remove any focus outlines */
-.wp-block-group.stat-card:focus,
-.wp-block-group.stat-card:active,
-.wp-block-group.stat-card:hover {
-  outline: none !important;
-  box-shadow: none !important;
-}
-
-/* Container for horizontal layout */
-.stats-container {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: stretch !important;
-  gap: 20px !important;
-  flex-wrap: wrap !important;
-}
-
-.stats-container .wp-block-group.stat-card {
-  flex: 1 !important;
-  min-width: 200px !important;
-  margin: 0 !important;
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .stats-container {
-    flex-direction: column !important;
-    gap: 15px !important;
-  }
-  
-  .stats-container .wp-block-group.stat-card {
-    min-width: 100% !important;
-  }
-}
-
-
