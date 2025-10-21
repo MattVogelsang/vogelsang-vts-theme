@@ -14,7 +14,7 @@ register_block_pattern(
     'title'       => __('Homepage Layout – VTS', 'vogelsang-vts'),
     'description' => __('Replica of VentureTech Solutions homepage using core blocks', 'vogelsang-vts'),
     'categories'  => array('layout'),
-    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white","layout":{"type":"constrained"}} -->
+    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white"} -->
 <div class="wp-block-group alignfull bg-vts-primary text-white">
 
   <!-- wp:spacer {"height":"2rem"} -->
