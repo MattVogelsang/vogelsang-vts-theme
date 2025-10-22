@@ -532,38 +532,39 @@
     color: #ffffff !important;
   }
 
-  /* Digital Marketing Services Grid Layout */
+/* Digital Marketing Services Grid Layout */
+.wp-block-group.digital-marketing-services {
+  display: grid !important;
+  grid-template-columns: auto auto auto !important; /* Changed to auto columns for tighter layout */
+  gap: 2px !important; /* Even smaller gap to bring elements closer */
+  align-items: start !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important; /* Reduced padding to use more space */
+  justify-content: center !important; /* Center the grid */
+}
+
+/* Expand on larger screens */
+@media (min-width: 1400px) {
   .wp-block-group.digital-marketing-services {
-    display: grid !important;
-    grid-template-columns: 1fr auto 1fr !important;
-    gap: 20px !important; /* Increased gap for larger layout */
-    align-items: start !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 40px !important; /* Reduced padding to use more space */
+    gap: 4px !important; /* Reduced from 6px */
+    padding: 0 40px !important;
   }
+}
 
-  /* Expand on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.digital-marketing-services {
-      gap: 30px !important;
-      padding: 0 60px !important;
-    }
+@media (min-width: 1600px) {
+  .wp-block-group.digital-marketing-services {
+    gap: 6px !important; /* Reduced from 8px */
+    padding: 0 60px !important;
   }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.digital-marketing-services {
-      gap: 40px !important;
-      padding: 0 80px !important;
-    }
-  }
+}
 
   .wp-block-group.left-services-column,
   .left-services-column {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
+    gap: 8px !important; /* Reduced from 12px */
     grid-column: 1 !important;
     min-width: unset !important;
     width: auto !important;
@@ -612,7 +613,7 @@
   .right-services-column {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important; /* Reduced from 20px to 12px for tighter spacing */
+    gap: 8px !important; /* Reduced from 12px for even tighter spacing */
     grid-column: 3 !important;
     min-width: unset !important; /* Remove min-width constraint */
     width: auto !important; /* Auto width instead of fixed */
