@@ -532,6 +532,20 @@
     color: #ffffff !important;
   }
 
+/* Homepage Stats Cards Text Color Override - High Specificity */
+.wp-block-group.stat-card h3,
+.wp-block-group.stat-card p {
+  color: #7497CE !important;
+}
+
+/* Additional override for any nested elements */
+.wp-block-group.stat-card h3,
+.wp-block-group.stat-card p,
+.wp-block-group.stat-card .wp-block-heading,
+.wp-block-group.stat-card .wp-block-paragraph {
+  color: #7497CE !important;
+}
+
 /* Digital Marketing Services Grid Layout */
 .wp-block-group.digital-marketing-services {
   display: grid !important;
