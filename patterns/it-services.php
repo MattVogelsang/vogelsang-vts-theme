@@ -5,7 +5,7 @@ register_block_pattern(
     'title'       => __('IT Services Page Layout', 'vogelsang-vts'),
     'description' => __('IT Services page layout matching the exact VentureTech website structure', 'vogelsang-vts'),
     'categories'  => array('layout'),
-    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white","layout":{"type":"constrained"}} -->
+    'content'     => '<!-- wp:group {"align":"full","className":"bg-vts-primary text-white"} -->
 <div class="wp-block-group alignfull bg-vts-primary text-white">
 
   <!-- wp:group {"className":"container mx-auto px-6 py-12 lg:py-16"} -->
@@ -18,8 +18,51 @@ register_block_pattern(
         <h1 class="wp-block-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">IT Services</h1>
         <!-- /wp:heading -->
         <!-- wp:paragraph {"className":"text-vts-muted text-base md:text-lg leading-relaxed mb-8"} -->
-        <p class="text-vts-muted text-base md:text-lg leading-relaxed mb-8">We are skilled at managing large networks with varying hardware and software needs with modular building blocks that can be easily moved and shifted as business requirements evolve.</p>
+        <p class="text-vts-muted text-base md:text-lg leading-relaxed mb-8">U.S. businesses lose $20 billion each year to cyber-attacks, with 30,000 websites hacked daily—one every 39 seconds. Our specialists provide insights through reports and dashboards to improve decision-making. Our IT Infrastructure will use all of the following programs</p>
         <!-- /wp:paragraph -->
+        
+        <!-- Technology Tags -->
+        <!-- wp:group {"className":"technology-tags"} -->
+        <div class="wp-block-group technology-tags">
+          <!-- wp:list {"className":"grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center"} -->
+          <ul class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+            <!-- wp:list-item -->
+            <li class="tech-tag">Ajax</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">ASP</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">.net</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">C#</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">XML-RPC</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">JSON</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">MVC</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">SOAP</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">REST</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">VB</li>
+            <!-- /wp:list-item -->
+            <!-- wp:list-item -->
+            <li class="tech-tag">Web Service Developers</li>
+            <!-- /wp:list-item -->
+          </ul>
+          <!-- /wp:list -->
+        </div>
+        <!-- /wp:group -->
       </div>
       <!-- /wp:column -->
       <!-- wp:column {"verticalAlignment":"center","width":"45%"} -->
@@ -35,6 +78,12 @@ register_block_pattern(
     <!-- /wp:columns -->
   </div>
   <!-- /wp:group -->
+
+
+  <!-- Services Heading -->
+  <div class="services-heading">
+    <h2 class="services-title">/services</h2>
+  </div>
 
   <!-- wp:group {"className":"container mx-auto px-6 py-12 it-services-layout"} -->
   <div class="wp-block-group container mx-auto px-6 py-12 it-services-layout">

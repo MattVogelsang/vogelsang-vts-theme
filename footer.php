@@ -1,13 +1,13 @@
 </main><!-- #primary -->
 
-<footer class="bg-vts-primary text-vts-muted border-t border-vts-panel/50 mt-auto">
+<footer class="bg-vts-primary text-vts-muted border-t border-vts-panel/50 mt-48">
   <div class="container mx-auto px-6 py-10">
     
     <!-- Footer Content -->
     <div class="flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto">
       
       <!-- Logo -->
-      <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-90 transition-opacity">
+      <a href="<?php echo esc_url(home_url('/')); ?>" class="inline-block hover:opacity-90 transition-opacity mb-4">
         <img 
           src="<?php echo esc_url(get_template_directory_uri() . '/assets/logo-light.png'); ?>" 
           class="h-8" 

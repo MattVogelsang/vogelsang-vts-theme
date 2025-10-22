@@ -129,15 +129,32 @@
     flex-shrink: 1 !important;
   }
 
-  /* IT Services Layout Grid - More Compact - High Specificity */
+  /* IT Services Layout Grid - Tight spacing like Digital Marketing */
   .wp-block-group.it-services-layout {
     display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr 1fr !important;
+    grid-template-columns: 1fr auto auto 1fr !important; /* Changed to auto for images for tighter fit */
     grid-template-rows: auto !important;
-    gap: 16px !important;
+    gap: 12px !important; /* Tight gap like Digital Marketing */
     align-items: start !important;
-    max-width: 1200px !important;
+    max-width: 100% !important;
+    width: 100% !important;
     margin: 0 auto !important;
+    padding: 0 40px !important;
+  }
+
+  /* Expand on larger screens with increased gap */
+  @media (min-width: 1400px) {
+    .wp-block-group.it-services-layout {
+      gap: 20px !important;
+      padding: 0 60px !important;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .wp-block-group.it-services-layout {
+      gap: 30px !important;
+      padding: 0 80px !important;
+    }
   }
 
   .wp-block-group.left-services-group {
@@ -149,11 +166,27 @@
   }
 
   .wp-block-group.left-group-image {
+    width: 100% !important;
+    max-width: 300px !important; /* Fixed width for tight fit */
     height: 100% !important;
-    min-height: 300px !important;
-    max-height: 400px !important;
+    min-height: 400px !important;
     grid-column: 2 !important;
     grid-row: 1 !important;
+  }
+
+  /* Scale up images on larger screens */
+  @media (min-width: 1400px) {
+    .wp-block-group.left-group-image {
+      max-width: 350px !important;
+      min-height: 500px !important;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .wp-block-group.left-group-image {
+      max-width: 400px !important;
+      min-height: 600px !important;
+    }
   }
 
   .wp-block-group.left-group-image img {
@@ -166,16 +199,32 @@
     display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
-    grid-column: 3 !important;
+    grid-column: 4 !important;
     grid-row: 1 !important;
   }
 
   .wp-block-group.right-group-image {
+    width: 100% !important;
+    max-width: 300px !important; /* Fixed width for tight fit */
     height: 100% !important;
-    min-height: 300px !important;
-    max-height: 400px !important;
-    grid-column: 4 !important;
+    min-height: 400px !important;
+    grid-column: 4 !important; /* Move to right side of the boxes */
     grid-row: 1 !important;
+  }
+
+  /* Scale up images on larger screens */
+  @media (min-width: 1400px) {
+    .wp-block-group.right-group-image {
+      max-width: 350px !important;
+      min-height: 500px !important;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .wp-block-group.right-group-image {
+      max-width: 400px !important;
+      min-height: 600px !important;
+    }
   }
 
   .wp-block-group.right-group-image img {
@@ -184,13 +233,26 @@
     object-fit: cover !important;
   }
 
-  /* Service Card Constraints for Better Fit - More Compact - High Specificity */
+  /* Service Card Constraints - Responsive sizing */
   .wp-block-group.it-services-layout .wp-block-group.service-card {
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
-    padding: 16px !important;
+    padding: 18px !important;
     max-height: fit-content !important;
+  }
+
+  /* Scale up service cards on larger screens */
+  @media (min-width: 1400px) {
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 22px !important;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 26px !important;
+    }
   }
 
   .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
@@ -200,10 +262,22 @@
     min-height: auto !important;
   }
 
+  @media (min-width: 1400px) {
+    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+      font-size: 1.1rem !important;
+    }
+  }
+
   .wp-block-group.it-services-layout .wp-block-group.service-card ul {
     margin: 0 !important;
-    font-size: 0.8rem !important;
+    font-size: 0.85rem !important;
     line-height: 1.4 !important;
+  }
+
+  @media (min-width: 1400px) {
+    .wp-block-group.it-services-layout .wp-block-group.service-card ul {
+      font-size: 0.9rem !important;
+    }
   }
 
   .wp-block-group.it-services-layout .wp-block-group.service-card ul li {
@@ -648,6 +722,61 @@
 
     .wp-block-group.central-image {
       min-height: 250px !important;
+    }
+  }
+
+  /* Technology Tags Styles - Simple like Digital Marketing */
+  .technology-tags {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    padding: 40px 20px !important;
+  }
+
+  .technology-tags .tech-list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+    gap: 12px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 800px !important;
+    width: 100% !important;
+  }
+
+  .technology-tags .tech-list li {
+    background: #2B3545 !important;
+    color: white !important;
+    padding: 12px 16px !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    border: 1px solid #3A4556 !important;
+    transition: all 0.3s ease !important;
+    min-height: 48px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .technology-tags .tech-list li:hover {
+    background: #3A4556 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  /* Responsive adjustments for technology tags */
+  @media (max-width: 768px) {
+    .technology-tags .tech-list {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+      gap: 8px !important;
+    }
+
+    .technology-tags .tech-list li {
+      font-size: 0.8rem !important;
+      padding: 10px 12px !important;
+      min-height: 40px !important;
     }
   }
 }
