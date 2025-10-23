@@ -1,11 +1,4 @@
 <?php
-/**
- * Title: Recruitment Services Page Layout
- * Slug: vogelsang-vts/recruitment-services
- * Categories: layout
- * Description: Recruitment Services page layout with hero section only
- */
-
 register_block_pattern(
   'vogelsang-vts/recruitment-services',
   array(

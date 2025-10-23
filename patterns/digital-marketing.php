@@ -1,11 +1,4 @@
 <?php
-/**
- * Title: Digital Marketing Page Layout
- * Slug: vogelsang-vts/digital-marketing
- * Categories: layout
- * Description: Digital Marketing page layout matching the provided design
- */
-
 register_block_pattern(
   'vogelsang-vts/digital-marketing',
   array(

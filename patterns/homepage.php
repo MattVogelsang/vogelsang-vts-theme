@@ -1,11 +1,4 @@
 <?php
-/**
- * Title: Homepage Layout – VTS
- * Slug: vogelsang-vts/homepage
- * Categories: layout
- * Description: Complete VentureTech Solutions homepage layout using core Gutenberg blocks
- */
-
 $image_url = esc_url(get_template_directory_uri() . '/assets/shutterstock_2256482287-2.png');
 
 register_block_pattern(
