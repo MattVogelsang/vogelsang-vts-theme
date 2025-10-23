@@ -132,14 +132,15 @@
   /* IT Services Layout Grid - Tight spacing like Digital Marketing */
   .wp-block-group.it-services-layout {
     display: grid !important;
-    grid-template-columns: 1fr auto auto 1fr !important; /* Changed to auto for images for tighter fit */
+    grid-template-columns: auto auto auto auto !important; /* tight columns for close spacing */
     grid-template-rows: auto !important;
-    gap: 12px !important; /* Tight gap like Digital Marketing */
+    gap: 8px !important; /* Much tighter gap for close spacing */
     align-items: start !important;
     max-width: 100% !important;
     width: 100% !important;
     margin: 0 auto !important;
     padding: 0 40px !important;
+    justify-content: center !important;
   }
 
   /* Expand on larger screens with increased gap */
@@ -160,9 +161,11 @@
   .wp-block-group.left-services-group {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
+    gap: 8px !important;
     grid-column: 1 !important;
     grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 300px !important; /* Tighter width */
   }
 
   .wp-block-group.left-group-image {
@@ -198,9 +201,11 @@
   .wp-block-group.right-services-group {
     display: flex !important;
     flex-direction: column !important;
-    gap: 12px !important;
-    grid-column: 4 !important;
+    gap: 8px !important;
+    grid-column: 3 !important;
     grid-row: 1 !important;
+    width: 100% !important;
+    max-width: 300px !important; /* Tighter width */
   }
 
   .wp-block-group.right-group-image {
@@ -238,12 +243,13 @@
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
-    padding: 18px !important;
+    padding: 16px !important; /* Reduced padding for tighter fit */
     max-height: fit-content !important;
     background-color: rgba(13, 41, 64, 0.5) !important;
     border: 1px solid #20364E !important;
     border-radius: 12px !important;
     transition: all 0.3s ease !important;
+    margin-bottom: 6px !important; /* Reduced margin between cards */
   }
 
   /* Scale up service cards on larger screens */
