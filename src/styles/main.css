@@ -233,13 +233,17 @@
     object-fit: cover !important;
   }
 
-  /* Service Card Constraints - Responsive sizing */
+  /* IT Services Service Card Constraints - Responsive sizing */
   .wp-block-group.it-services-layout .wp-block-group.service-card {
     display: flex !important;
     flex-direction: column !important;
     height: auto !important;
     padding: 18px !important;
     max-height: fit-content !important;
+    background-color: rgba(13, 41, 64, 0.5) !important;
+    border: 1px solid #20364E !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
   }
 
   /* Scale up service cards on larger screens */
@@ -283,6 +287,23 @@
   .wp-block-group.it-services-layout .wp-block-group.service-card ul li {
     margin-bottom: 2px !important;
     padding: 2px 0 !important;
+  }
+
+  /* IT Services Service Card Hover Effects */
+  .wp-block-group.it-services-layout .wp-block-group.service-card:hover {
+    background-color: rgba(13, 41, 64, 0.8) !important;
+    border-color: #0d5a8a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* IT Services Service Card Text Styling */
+  .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+    color: #ffffff !important;
+  }
+
+  .wp-block-group.it-services-layout .wp-block-group.service-card ul {
+    color: #9fb6c8 !important;
   }
 }
 

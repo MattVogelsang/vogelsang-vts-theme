@@ -80,13 +80,16 @@ register_block_pattern(
   <!-- /wp:group -->
 
 
-  <!-- Services Heading -->
-  <div class="services-heading">
-    <h2 class="services-title">/services</h2>
-  </div>
-
-  <!-- wp:group {"className":"container mx-auto px-6 py-12 it-services-layout"} -->
-  <div class="wp-block-group container mx-auto px-6 py-12 it-services-layout">
+  <!-- Services Section -->
+  <!-- wp:group {"className":"container mx-auto px-6 py-12"} -->
+  <div class="wp-block-group container mx-auto px-6 py-12">
+    
+    <!-- wp:heading {"level":2,"className":"text-2xl md:text-3xl font-semibold mb-8"} -->
+    <h2 class="wp-block-heading text-2xl md:text-3xl font-semibold mb-8">/ Services</h2>
+    <!-- /wp:heading -->
+    
+    <!-- wp:group {"className":"it-services-layout"} -->
+    <div class="wp-block-group it-services-layout">
 
     <!-- wp:group {"className":"left-services-group"} -->
     <div class="wp-block-group left-services-group">
@@ -268,6 +271,9 @@ register_block_pattern(
     </div>
     <!-- /wp:group -->
 
+    </div>
+    <!-- /wp:group -->
+    
   </div>
   <!-- /wp:group -->
 
