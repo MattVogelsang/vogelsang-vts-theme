@@ -134,8 +134,8 @@ register_block_pattern(
           <p class="text-vts-muted text-sm leading-relaxed mb-4 flex-grow">We are skilled at managing large networks with varying hardware and software needs with modular building blocks that can be easily moved and shifted as business requirements evolve.</p>
           <!-- /wp:paragraph -->
           
-          <!-- wp:paragraph {"className":"mt-auto"} -->
-          <p class="mt-auto"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More →</a></p>
+          <!-- wp:paragraph {"className":"mt-auto text-right"} -->
+          <p class="mt-auto text-right"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More</a></p>
           <!-- /wp:paragraph -->
           
         </div>
@@ -167,8 +167,8 @@ register_block_pattern(
           <p class="text-vts-muted text-sm leading-relaxed mb-4 flex-grow">Creating innovative responsive designs for companies who want to have a strong online presence that helps increase conversion rates to effectively grow a business is what our highly skilled team does daily.</p>
           <!-- /wp:paragraph -->
           
-          <!-- wp:paragraph {"className":"mt-auto"} -->
-          <p class="mt-auto"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More →</a></p>
+          <!-- wp:paragraph {"className":"mt-auto text-right"} -->
+          <p class="mt-auto text-right"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More</a></p>
           <!-- /wp:paragraph -->
           
         </div>
@@ -200,8 +200,8 @@ register_block_pattern(
           <p class="text-vts-muted text-sm leading-relaxed mb-4 flex-grow">We have years of recruiting experience and have developed a customized recruitment methodology focused on connecting professionals who are looking for new opportunities to the companies looking to hire them.</p>
           <!-- /wp:paragraph -->
           
-          <!-- wp:paragraph {"className":"mt-auto"} -->
-          <p class="mt-auto"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More →</a></p>
+          <!-- wp:paragraph {"className":"mt-auto text-right"} -->
+          <p class="mt-auto text-right"><a href="#" class="text-vts-muted hover:text-white transition-colors text-sm font-medium">Learn More</a></p>
           <!-- /wp:paragraph -->
           
         </div>
