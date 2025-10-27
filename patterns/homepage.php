@@ -107,8 +107,8 @@ register_block_pattern(
     <h2 class="wp-block-heading section-heading text-2xl md:text-3xl font-semibold mb-8">/ Services</h2>
     <!-- /wp:heading -->
     
-    <!-- wp:columns {"className":"grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"} -->
-    <div class="wp-block-columns grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+    <!-- wp:columns {"className":"homepage-services-container grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"} -->
+    <div class="wp-block-columns homepage-services-container grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
       
       <!-- IT Services Card -->
       <!-- wp:column -->

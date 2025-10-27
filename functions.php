@@ -57,7 +57,7 @@ function vts_assets() {
       'vts-tailwind',
       get_template_directory_uri() . '/assets/css/style.css',
       array(),
-      '2.5.0'
+      '2.6.0'
     );
   } else {
     // Fallback to CDN

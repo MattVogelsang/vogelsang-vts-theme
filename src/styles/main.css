@@ -840,4 +840,54 @@
   .wp-block-group.service-card .wp-block-image figure[style*="background-color"] {
     background-color: #6A6B7D !important;
   }
+  
+  /* Homepage Service Cards - Fix narrow width issue */
+  .wp-block-columns.homepage-services-container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 20px !important;
+  }
+  
+  .wp-block-columns.homepage-services-container .wp-block-column {
+    flex: 1 !important;
+    min-width: 300px !important;
+    max-width: 400px !important;
+  }
+  
+  .wp-block-columns.homepage-services-container .wp-block-group.service-card {
+    background-color: rgba(13, 41, 64, 0.5) !important;
+    border: 1px solid #20364E !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    height: 100% !important;
+    min-height: 280px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  
+  .wp-block-columns.homepage-services-container .wp-block-group.service-card h3 {
+    color: #ffffff !important;
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .wp-block-columns.homepage-services-container .wp-block-group.service-card p {
+    color: #9fb6c8 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 16px !important;
+  }
+  
+  /* Force stats card colors to be blue - Higher specificity */
+  .wp-block-group.stat-card h3,
+  .wp-block-group.stat-card p {
+    color: #7497CE !important;
+  }
+  
+  /* Even higher specificity for stats cards */
+  .wp-block-columns .wp-block-column .wp-block-group.stat-card h3,
+  .wp-block-columns .wp-block-column .wp-block-group.stat-card p {
+    color: #7497CE !important;
+  }
 }
