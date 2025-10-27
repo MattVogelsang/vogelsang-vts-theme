@@ -118,11 +118,11 @@ register_block_pattern(
           
           <!-- wp:group {"className":"flex items-center gap-4 mb-4"} -->
           <div class="wp-block-group flex items-center gap-4 mb-4">
-            <!-- wp:html -->
-            <div class="text-3xl p-3 bg-vts-primary rounded-lg text-vts-accent">
-              <i class="fas fa-microchip"></i>
-            </div>
-            <!-- /wp:html -->
+            <!-- wp:image {"className":"w-12 h-12 p-3 rounded-lg","style":{"backgroundColor":"#6A6B7D"}} -->
+            <figure class="wp-block-image w-12 h-12 p-3 rounded-lg" style="background-color:#6A6B7D">
+              <img src="' . esc_url(get_template_directory_uri() . '/assets/chip.png') . '" alt="IT Services Icon" class="w-full h-full object-contain"/>
+            </figure>
+            <!-- /wp:image -->
           </div>
           <!-- /wp:group -->
           
@@ -151,11 +151,11 @@ register_block_pattern(
           
           <!-- wp:group {"className":"flex items-center gap-4 mb-4"} -->
           <div class="wp-block-group flex items-center gap-4 mb-4">
-            <!-- wp:html -->
-            <div class="text-3xl p-3 bg-vts-primary rounded-lg text-vts-accent">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <!-- /wp:html -->
+            <!-- wp:image {"className":"w-12 h-12 p-3 rounded-lg","style":{"backgroundColor":"#6A6B7D"}} -->
+            <figure class="wp-block-image w-12 h-12 p-3 rounded-lg" style="background-color:#6A6B7D">
+              <img src="' . esc_url(get_template_directory_uri() . '/assets/chart.png') . '" alt="Digital Marketing Icon" class="w-full h-full object-contain"/>
+            </figure>
+            <!-- /wp:image -->
           </div>
           <!-- /wp:group -->
           
@@ -184,11 +184,11 @@ register_block_pattern(
           
           <!-- wp:group {"className":"flex items-center gap-4 mb-4"} -->
           <div class="wp-block-group flex items-center gap-4 mb-4">
-            <!-- wp:html -->
-            <div class="text-3xl p-3 bg-vts-primary rounded-lg text-vts-accent">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <!-- /wp:html -->
+            <!-- wp:image {"className":"w-12 h-12 p-3 rounded-lg","style":{"backgroundColor":"#6A6B7D"}} -->
+            <figure class="wp-block-image w-12 h-12 p-3 rounded-lg" style="background-color:#6A6B7D">
+              <img src="' . esc_url(get_template_directory_uri() . '/assets/case.png') . '" alt="Career Opportunities Icon" class="w-full h-full object-contain"/>
+            </figure>
+            <!-- /wp:image -->
           </div>
           <!-- /wp:group -->
           

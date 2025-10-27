@@ -61,269 +61,102 @@
 
 @layer components {
   .section-heading {
-    @apply text-2xl md:text-3xl font-semibold mb-6;
+    @apply text-xl md:text-2xl lg:text-3xl font-semibold mb-4 md:mb-6;
   }
 
-  /* Homepage Stats Cards - High Specificity */
-  .wp-block-group.stat-card {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 20px !important;
-    min-width: 140px !important;
-    flex: 1 !important;
-    background-color: #16263D !important;
-    border-radius: 8px !important;
-    border: 1px solid #20364E !important;
-    border-style: solid !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
-    transition: box-shadow 0.3s ease !important;
-    margin: 0 !important;
-    outline: none !important;
-  }
-
-  .wp-block-group.stat-card:hover {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
-  }
-
-  .wp-block-group.stat-card h3 {
-    font-size: 2rem !important;
-    font-weight: 700 !important;
-    color: #ffffff !important;
-    margin: 0 0 4px 0 !important;
-    line-height: 1 !important;
-  }
-
-  .wp-block-group.stat-card p {
-    font-size: 0.875rem !important;
-    color: rgb(159 182 200) !important;
-    margin: 0 !important;
-    font-weight: 400 !important;
-  }
-
-  /* Stats container layout - Override WordPress flex layout */
-  .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 16px !important;
-    margin-top: 32px !important;
-    align-items: stretch !important;
-    margin-bottom: 0 !important;
-  }
-
-  /* Override WordPress column styles for stats */
-  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card {
-    flex: 1 1 140px !important;
-    min-width: 140px !important;
-    max-width: none !important;
-  }
-
-  /* Ensure proper spacing and alignment */
-  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:first-child,
-  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:nth-child(2),
-  .wp-block-group.flex.flex-wrap.gap-4.mt-8 .wp-block-group.stat-card:nth-child(3) {
-    flex-basis: auto !important;
-    flex-grow: 1 !important;
-    flex-shrink: 1 !important;
-  }
-
-  /* IT Services Layout Grid - Tight spacing like Digital Marketing */
-  .wp-block-group.it-services-layout {
-    display: grid !important;
-    grid-template-columns: auto auto auto auto !important; /* tight columns for close spacing */
-    grid-template-rows: auto !important;
-    gap: 8px !important; /* Much tighter gap for close spacing */
-    align-items: start !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    padding: 0 40px !important;
-    justify-content: center !important;
-  }
-
-  /* Expand on larger screens with increased gap */
-  @media (min-width: 1400px) {
-    .wp-block-group.it-services-layout {
-      gap: 20px !important;
-      padding: 0 60px !important;
+  /* ===== MOBILE-FIRST RESPONSIVE DESIGN ===== */
+  
+  /* Mobile Base Styles (320px - 767px) */
+  @media (max-width: 767px) {
+    /* Homepage Hero Section - Mobile */
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+      flex-direction: column !important;
+      gap: 16px !important;
+  padding: 20px !important;
     }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.it-services-layout {
-      gap: 30px !important;
-      padding: 0 80px !important;
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column {
+      flex-basis: 100% !important;
+      max-width: 100% !important;
     }
-  }
-
-  .wp-block-group.left-services-group {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    width: 100% !important;
-    max-width: 300px !important; /* Tighter width */
-  }
-
-  .wp-block-group.left-group-image {
-    width: 100% !important;
-    max-width: 300px !important; /* Fixed width for tight fit */
-    height: 100% !important;
-    min-height: 400px !important;
-    grid-column: 2 !important;
-    grid-row: 1 !important;
-  }
-
-  /* Scale up images on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.left-group-image {
-      max-width: 350px !important;
-      min-height: 500px !important;
+    
+    /* Image (second column) appears first on mobile */
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
+      order: 2 !important;
     }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.left-group-image {
-      max-width: 400px !important;
-      min-height: 600px !important;
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:last-child {
+      order: 1 !important;
     }
-  }
-
-  .wp-block-group.left-group-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-  .wp-block-group.right-services-group {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    grid-column: 3 !important;
-    grid-row: 1 !important;
-    width: 100% !important;
-    max-width: 300px !important; /* Tighter width */
-  }
-
-  .wp-block-group.right-group-image {
-    width: 100% !important;
-    max-width: 300px !important; /* Fixed width for tight fit */
-    height: 100% !important;
-    min-height: 400px !important;
-    grid-column: 4 !important; /* Move to right side of the boxes */
-    grid-row: 1 !important;
-  }
-
-  /* Scale up images on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.right-group-image {
-      max-width: 350px !important;
-      min-height: 500px !important;
+    
+    /* Homepage Stats Cards - Mobile */
+    .wp-block-group.stat-card {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+  text-align: center !important;
+      padding: 16px !important;
+      min-width: 100px !important;
+      flex: 1 !important;
+      background-color: #16263D !important;
+      border-radius: 8px !important;
+      border: 1px solid #20364E !important;
+      border-style: solid !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+      transition: box-shadow 0.3s ease !important;
+      margin: 0 !important;
+      outline: none !important;
     }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.right-group-image {
-      max-width: 400px !important;
-      min-height: 600px !important;
-    }
-  }
-
-  .wp-block-group.right-group-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-  }
-
-  /* IT Services Service Card Constraints - Responsive sizing */
-  .wp-block-group.it-services-layout .wp-block-group.service-card {
-    display: flex !important;
-    flex-direction: column !important;
-    height: auto !important;
-    padding: 16px !important; /* Reduced padding for tighter fit */
-    max-height: fit-content !important;
-    background-color: rgba(13, 41, 64, 0.5) !important;
-    border: 1px solid #20364E !important;
-    border-radius: 12px !important;
-    transition: all 0.3s ease !important;
-    margin-bottom: 6px !important; /* Reduced margin between cards */
-  }
-
-  /* Scale up service cards on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.it-services-layout .wp-block-group.service-card {
-      padding: 22px !important;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.it-services-layout .wp-block-group.service-card {
-      padding: 26px !important;
-    }
-  }
-
-  .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
-    margin-bottom: 12px !important;
-    font-size: 1rem !important;
-    line-height: 1.3 !important;
-    min-height: auto !important;
-  }
-
-  @media (min-width: 1400px) {
-    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
-      font-size: 1.1rem !important;
-    }
-  }
-
-  .wp-block-group.it-services-layout .wp-block-group.service-card ul {
-    margin: 0 !important;
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
-  }
-
-  @media (min-width: 1400px) {
-    .wp-block-group.it-services-layout .wp-block-group.service-card ul {
-      font-size: 0.9rem !important;
-    }
-  }
-
-  .wp-block-group.it-services-layout .wp-block-group.service-card ul li {
-    margin-bottom: 2px !important;
-    padding: 2px 0 !important;
-  }
-
-  /* IT Services Service Card Hover Effects */
-  .wp-block-group.it-services-layout .wp-block-group.service-card:hover {
-    background-color: rgba(13, 41, 64, 0.8) !important;
-    border-color: #0d5a8a !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  /* IT Services Service Card Text Styling */
-  .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
-    color: #ffffff !important;
-  }
-
-  .wp-block-group.it-services-layout .wp-block-group.service-card ul {
-    color: #9fb6c8 !important;
-  }
+    
+    .wp-block-group.stat-card h3 {
+      font-size: 1.5rem !important;
+  font-weight: 700 !important;
+      color: #7497CE !important;
+      margin: 0 0 4px 0 !important;
+  line-height: 1 !important;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .wp-block-group.stat-card p {
+      font-size: 0.75rem !important;
+      color: #7497CE !important;
+  margin: 0 !important;
+  font-weight: 400 !important;
+}
 
-  /* Responsive Layout for IT Services - High Specificity */
-  @media (max-width: 1024px) {
+    /* Stats container layout - Mobile */
+    .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 8px !important;
+      margin-top: 24px !important;
+      align-items: stretch !important;
+      margin-bottom: 0 !important;
+      padding: 0 20px !important;
+    }
+    
+    /* Homepage Services - Mobile */
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
+      gap: 12px !important;
+      padding: 0 20px !important;
+    }
+    
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 .wp-block-column {
+      max-width: 100% !important;
+      min-width: 100% !important;
+    }
+    
+    /* IT Services Layout - Mobile */
     .wp-block-group.it-services-layout {
+      display: grid !important;
       grid-template-columns: 1fr !important;
       grid-template-rows: auto !important;
-      gap: 12px !important;
+      gap: 16px !important;
+      align-items: start !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 20px !important;
     }
     
     .wp-block-group.left-services-group,
@@ -343,44 +176,244 @@
     
     .wp-block-group.left-services-group,
     .wp-block-group.right-services-group {
-      gap: 10px !important;
-    }
-  }
-
-  /* Mobile specific adjustments - High Specificity */
-  @media (max-width: 768px) {
-    .wp-block-group.it-services-layout .wp-block-group.service-card {
-      padding: 12px !important;
+      gap: 12px !important;
     }
     
-    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
-      font-size: 0.9rem !important;
+    /* IT Services Service Cards - Mobile */
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      display: flex !important;
+      flex-direction: column !important;
+      height: auto !important;
+      padding: 16px !important;
+      max-height: fit-content !important;
+      background-color: rgba(13, 41, 64, 0.5) !important;
+      border: 1px solid #20364E !important;
+  border-radius: 12px !important;
+      transition: all 0.3s ease !important;
       margin-bottom: 8px !important;
     }
     
+    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+      margin-bottom: 8px !important;
+      font-size: 1rem !important;
+      line-height: 1.3 !important;
+      min-height: auto !important;
+      color: #ffffff !important;
+    }
+    
     .wp-block-group.it-services-layout .wp-block-group.service-card ul {
-      font-size: 0.75rem !important;
+  margin: 0 !important;
+      font-size: 0.8rem !important;
+      line-height: 1.4 !important;
+      color: #9fb6c8 !important;
     }
     
     .wp-block-group.it-services-layout .wp-block-group.service-card ul li {
-      padding: 1px 0 !important;
+      margin-bottom: 2px !important;
+      padding: 2px 0 !important;
+    }
+    
+    /* Digital Marketing Services - Mobile */
+    .wp-block-group.digital-marketing-services {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+      align-items: start !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 20px !important;
+    }
+    
+    .wp-block-group.left-services-column,
+    .wp-block-group.central-image,
+    .wp-block-group.right-services-column {
+      grid-column: 1 !important;
+    }
+    
+    .wp-block-group.central-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-height: 250px !important;
+      margin: 0 auto !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card {
+      background-color: rgba(13, 41, 64, 0.5) !important;
+      border: 1px solid #20364E !important;
+  border-radius: 12px !important;
+      padding: 16px !important;
+      transition: all 0.3s ease !important;
+      min-height: 140px !important;
+      box-sizing: border-box !important;
+      width: 100% !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card h3 {
+      color: #ffffff !important;
+      font-size: 1rem !important;
+      margin-bottom: 8px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card p {
+      color: #9fb6c8 !important;
+      font-size: 0.8rem !important;
+      line-height: 1.5 !important;
+    }
+    
+    /* Technology Tags - Mobile */
+    .technology-tags {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+  padding: 20px !important;
+    }
+    
+    .technology-tags .tech-list {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+      gap: 8px !important;
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    
+    .technology-tags .tech-list li {
+      background: #2B3545 !important;
+      color: white !important;
+      padding: 10px 12px !important;
+      border-radius: 8px !important;
+  text-align: center !important;
+      font-size: 0.8rem !important;
+      font-weight: 500 !important;
+      border: 1px solid #3A4556 !important;
+      transition: all 0.3s ease !important;
+      min-height: 40px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
   }
+  
+  /* Tablet Styles (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Homepage Hero Section - Tablet */
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
+      flex-direction: row !important;
+      gap: 24px !important;
+      padding: 40px !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
+      flex-basis: 60% !important;
+      max-width: 60% !important;
+    }
+    
+    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:last-child {
+      flex-basis: 40% !important;
+      max-width: 40% !important;
+    }
+    
+    /* Homepage Stats Cards - Tablet */
+    .wp-block-group.stat-card {
+      padding: 18px !important;
+      min-width: 120px !important;
+}
 
-  /* Homepage Hero Section - Force proper column layout */
-  .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 32px !important;
-    width: 100% !important;
+.wp-block-group.stat-card h3 {
+      font-size: 1.75rem !important;
+}
+
+.wp-block-group.stat-card p {
+      font-size: 0.8rem !important;
+    }
+    
+    .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
+      gap: 12px !important;
+      margin-top: 28px !important;
+      padding: 0 40px !important;
+    }
+    
+    /* Homepage Services - Tablet */
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
+      gap: 16px !important;
+      padding: 0 40px !important;
+    }
+    
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 .wp-block-column {
+      max-width: 100% !important;
+      min-width: 100% !important;
+    }
+    
+    /* IT Services Layout - Tablet */
+    .wp-block-group.it-services-layout {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      padding: 0 40px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 18px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+      font-size: 1.1rem !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card ul {
+      font-size: 0.85rem !important;
+    }
+    
+    /* Digital Marketing Services - Tablet */
+    .wp-block-group.digital-marketing-services {
+      grid-template-columns: 1fr !important;
+      gap: 20px !important;
+      padding: 0 40px !important;
+    }
+    
+    .wp-block-group.central-image {
+      min-height: 300px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card {
+      padding: 20px !important;
+      min-height: 160px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card h3 {
+      font-size: 1.1rem !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card p {
+      font-size: 0.85rem !important;
+    }
+    
+    /* Technology Tags - Tablet */
+    .technology-tags {
+      padding: 30px !important;
+    }
+    
+    .technology-tags .tech-list {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)) !important;
+      gap: 10px !important;
+    }
+    
+    .technology-tags .tech-list li {
+      font-size: 0.85rem !important;
+      padding: 12px 14px !important;
+      min-height: 44px !important;
+    }
   }
-
-  /* Ensure columns maintain their widths on larger screens */
-  @media (min-width: 768px) {
+  
+  /* Desktop Styles (1024px - 1399px) */
+  @media (min-width: 1024px) and (max-width: 1399px) {
+    /* Homepage Hero Section - Desktop */
     .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
       flex-direction: row !important;
       gap: 32px !important;
+      padding: 60px !important;
     }
     
     .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
@@ -392,44 +425,331 @@
       flex-basis: 45% !important;
       max-width: 45% !important;
     }
-  }
+    
+    /* Homepage Stats Cards - Desktop */
+.wp-block-group.stat-card {
+  padding: 20px !important;
+      min-width: 140px !important;
+}
 
-  @media (min-width: 1024px) {
+.wp-block-group.stat-card h3 {
+      font-size: 2rem !important;
+}
+
+.wp-block-group.stat-card p {
+      font-size: 0.875rem !important;
+    }
+    
+    .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
+      gap: 16px !important;
+      margin-top: 32px !important;
+      padding: 0 60px !important;
+    }
+    
+    /* Homepage Services - Desktop */
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
+      gap: 20px !important;
+      padding: 0 60px !important;
+    }
+    
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 .wp-block-column {
+      max-width: 100% !important;
+      min-width: 100% !important;
+    }
+    
+    /* IT Services Layout - Desktop */
+    .wp-block-group.it-services-layout {
+      grid-template-columns: auto auto auto auto !important;
+      gap: 8px !important;
+      padding: 0 60px !important;
+    }
+    
+    .wp-block-group.left-services-group {
+      grid-column: 1 !important;
+      max-width: 300px !important;
+    }
+    
+    .wp-block-group.left-group-image {
+      grid-column: 2 !important;
+      max-width: 300px !important;
+      min-height: 400px !important;
+    }
+    
+    .wp-block-group.right-services-group {
+      grid-column: 3 !important;
+      max-width: 300px !important;
+    }
+    
+    .wp-block-group.right-group-image {
+      grid-column: 4 !important;
+      max-width: 300px !important;
+      min-height: 400px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 16px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+      font-size: 1rem !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card ul {
+      font-size: 0.85rem !important;
+    }
+    
+    /* Digital Marketing Services - Desktop */
+    .wp-block-group.digital-marketing-services {
+      grid-template-columns: auto auto auto !important;
+      gap: 2px !important;
+      padding: 0 60px !important;
+    }
+    
+    .wp-block-group.left-services-column {
+      grid-column: 1 !important;
+      gap: 8px !important;
+    }
+    
+    .wp-block-group.central-image {
+      grid-column: 2 !important;
+      max-width: 450px !important;
+      min-height: 500px !important;
+    }
+    
+    .wp-block-group.right-services-column {
+      grid-column: 3 !important;
+      gap: 8px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card {
+      padding: 24px !important;
+      min-height: 160px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card h3 {
+      font-size: 1.125rem !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card p {
+      font-size: 0.875rem !important;
+    }
+    
+    /* Technology Tags - Desktop */
+    .technology-tags {
+      padding: 40px !important;
+    }
+    
+    .technology-tags .tech-list {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
+      gap: 12px !important;
+    }
+    
+    .technology-tags .tech-list li {
+      font-size: 0.9rem !important;
+      padding: 12px 16px !important;
+      min-height: 48px !important;
+    }
+  }
+  
+  /* Large Desktop Styles (1400px+) */
+  @media (min-width: 1400px) {
+    /* Homepage Hero Section - Large Desktop */
     .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
       gap: 48px !important;
-    }
-  }
-
-  /* Stack columns on mobile - Image on top */
-  @media (max-width: 767px) {
-    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 {
-      flex-direction: column !important;
-      gap: 24px !important;
+      padding: 80px !important;
     }
     
-    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column {
-      flex-basis: 100% !important;
-      max-width: 100% !important;
+    /* Homepage Stats Cards - Large Desktop */
+    .wp-block-group.stat-card {
+      padding: 24px !important;
+      min-width: 160px !important;
     }
     
-    /* Image (second column) appears first on mobile */
-    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:first-child {
-      order: 2 !important;
+    .wp-block-group.stat-card h3 {
+      font-size: 2.25rem !important;
     }
     
-    .wp-block-columns.are-vertically-aligned-center.items-center.gap-8.lg\:gap-12 .wp-block-column:last-child {
-      order: 1 !important;
+    .wp-block-group.stat-card p {
+      font-size: 1rem !important;
+    }
+    
+    .wp-block-group.flex.flex-wrap.gap-4.mt-8 {
+      gap: 20px !important;
+      margin-top: 40px !important;
+      padding: 0 80px !important;
+    }
+    
+    /* Homepage Services - Large Desktop */
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
+      gap: 32px !important;
+      padding: 0 80px !important;
+      max-width: 1200px !important;
+      margin: 0 auto !important;
+    }
+    
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 .wp-block-column {
+      max-width: 350px !important;
+      min-width: 300px !important;
+    }
+    
+    /* IT Services Layout - Large Desktop */
+    .wp-block-group.it-services-layout {
+      gap: 20px !important;
+      padding: 0 80px !important;
+    }
+    
+    .wp-block-group.left-services-group,
+    .wp-block-group.right-services-group {
+      max-width: 350px !important;
+    }
+    
+    .wp-block-group.left-group-image,
+    .wp-block-group.right-group-image {
+      max-width: 350px !important;
+      min-height: 500px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 22px !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card h3 {
+      font-size: 1.1rem !important;
+    }
+    
+    .wp-block-group.it-services-layout .wp-block-group.service-card ul {
+      font-size: 0.9rem !important;
+    }
+    
+    /* Digital Marketing Services - Large Desktop */
+    .wp-block-group.digital-marketing-services {
+      gap: 4px !important;
+      padding: 0 80px !important;
+    }
+    
+    .wp-block-group.central-image {
+      max-width: 550px !important;
+      min-height: 600px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card {
+      padding: 28px !important;
+      min-height: 180px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card h3 {
+      font-size: 1.25rem !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card p {
+      font-size: 0.9rem !important;
+    }
+    
+    /* Technology Tags - Large Desktop */
+    .technology-tags {
+      padding: 50px !important;
+    }
+    
+    .technology-tags .tech-list {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+      gap: 14px !important;
+    }
+    
+    .technology-tags .tech-list li {
+      font-size: 0.95rem !important;
+      padding: 14px 18px !important;
+      min-height: 52px !important;
     }
   }
+  
+  /* Extra Large Desktop Styles (1600px+) */
+  @media (min-width: 1600px) {
+    /* Homepage Services - Extra Large Desktop */
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
+  gap: 40px !important;
+      max-width: 1400px !important;
+    }
+    
+    .wp-block-columns.grid-cols-1.md\:grid-cols-3 .wp-block-column {
+      max-width: 400px !important;
+      min-width: 350px !important;
+    }
+    
+    /* IT Services Layout - Extra Large Desktop */
+    .wp-block-group.it-services-layout {
+      gap: 30px !important;
+    }
+    
+    .wp-block-group.left-services-group,
+    .wp-block-group.right-services-group {
+      max-width: 400px !important;
+    }
+    
+    .wp-block-group.left-group-image,
+    .wp-block-group.right-group-image {
+      max-width: 400px !important;
+  min-height: 600px !important;
+}
 
-  /* Digital Marketing Page - Hero Container */
-  .wp-block-group.container.mx-auto.px-6.py-12.lg\:py-16 {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
+    .wp-block-group.it-services-layout .wp-block-group.service-card {
+      padding: 26px !important;
+    }
+    
+    /* Digital Marketing Services - Extra Large Desktop */
+    .wp-block-group.digital-marketing-services {
+      gap: 6px !important;
+    }
+    
+    .wp-block-group.central-image {
+      max-width: 650px !important;
+      min-height: 700px !important;
+    }
+    
+    .wp-block-group.digital-marketing-services .service-card {
+      padding: 32px !important;
+      min-height: 200px !important;
+    }
   }
-
+  
+  /* ===== HOVER EFFECTS AND INTERACTIONS ===== */
+  
+  .wp-block-group.stat-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  .wp-block-group.it-services-layout .wp-block-group.service-card:hover {
+    background-color: rgba(13, 41, 64, 0.8) !important;
+    border-color: #0d5a8a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .wp-block-group.digital-marketing-services .service-card:hover {
+    background-color: rgba(13, 41, 64, 0.8) !important;
+    border-color: #0d5a8a !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  }
+  
+  .technology-tags .tech-list li:hover {
+    background: #3A4556 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  /* ===== ADDITIONAL UTILITIES ===== */
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Ensure no vertical borders on the page */
+  html, body {
+    border: none !important;
+    outline: none !important;
+    overflow-x: hidden !important;
+  }
+  
   /* Override any WordPress container constraints - Full width without vertical border */
   .wp-block-group.alignfull {
     max-width: 100% !important;
@@ -442,15 +762,13 @@
     outline: none !important;
     overflow: hidden !important;
   }
-
+  
   /* Ensure full width for Digital Marketing page */
   .wp-block-group.alignfull .wp-block-group.container {
     max-width: 100% !important;
     width: 100% !important;
-    padding-left: 60px !important;
-    padding-right: 60px !important;
   }
-
+  
   /* Force full width without viewport calculations */
   .wp-block-group.alignfull {
     left: 0 !important;
@@ -460,19 +778,19 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-
+  
   /* Override WordPress constrained layout */
   .wp-block-group[style*="max-width"] {
     max-width: 100% !important;
   }
-
+  
   /* Remove any width constraints from WordPress */
   .wp-block-group.alignfull,
   .wp-block-group.alignfull .wp-block-group.container {
     max-width: none !important;
     width: 100% !important;
   }
-
+  
   /* Remove constraints from page article and content wrappers */
   .page article,
   .page .entry-content {
@@ -481,7 +799,7 @@
     padding: 0 !important;
     margin: 0 !important;
   }
-
+  
   /* Ensure page content takes full width */
   .page #primary,
   .page .site-main {
@@ -490,335 +808,36 @@
     padding: 0 !important;
     margin: 0 !important;
   }
-
-  /* Homepage Services Container - Override max-width constraint */
-  .wp-block-group.container.mx-auto.px-6.pb-16 {
-    max-width: 1400px !important; /* Wider container for service cards */
-    padding-left: 3rem !important;
-    padding-right: 3rem !important;
+  
+  /* Service Card Icon Background Override - High Specificity */
+  .wp-block-group.service-card .wp-block-image {
+    background-color: #6A6B7D !important;
   }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.container.mx-auto.px-6.pb-16 {
-      max-width: 1600px !important; /* Even wider on large screens */
-      padding-left: 4rem !important;
-      padding-right: 4rem !important;
-    }
+  
+  .wp-block-group.service-card .wp-block-image figure {
+    background-color: #6A6B7D !important;
   }
-
-  /* Homepage Services - Reduce spacing between service cards */
-  .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
-    gap: 0.75rem !important; /* 12px - tight on mobile */
+  
+  /* Additional override for any nested elements */
+  .wp-block-group.service-card .wp-block-image[style*="background-color"] {
+    background-color: #6A6B7D !important;
   }
-
-  @media (min-width: 768px) {
-    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
-      gap: 1rem !important; /* 16px - closer on tablet/desktop */
-    }
+  
+  /* More specific overrides for service card icons */
+  .wp-block-columns .wp-block-column .wp-block-group.service-card .wp-block-image {
+    background-color: #6A6B7D !important;
   }
-
-  @media (min-width: 1024px) {
-    .wp-block-columns.grid-cols-1.md\:grid-cols-3 {
-      gap: 1.25rem !important; /* 20px - close spacing on large screens */
-    }
+  
+  .wp-block-columns .wp-block-column .wp-block-group.service-card .wp-block-image figure {
+    background-color: #6A6B7D !important;
   }
-
-  /* Ensure no vertical borders on the page */
-  html, body {
-    border: none !important;
-    outline: none !important;
-    overflow-x: hidden !important;
+  
+  /* Override any inline styles */
+  .wp-block-group.service-card .wp-block-image[style*="background-color"] {
+    background-color: #6A6B7D !important;
   }
-
-  /* Digital Marketing Page - Technology Tags */
-  .technology-tags ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 8px !important;
-  }
-
-  .technology-tags .tech-tag {
-    background-color: rgba(13, 90, 138, 0.2) !important;
-    border: 1px solid #0d5a8a !important;
-    border-radius: 6px !important;
-    padding: 10px 16px !important;
-    font-size: 0.875rem !important;
-    color: #9fb6c8 !important;
-    transition: all 0.3s ease !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: 44px !important;
-    margin: 4px !important;
-  }
-
-  .technology-tags .tech-tag:hover {
-    background-color: rgba(13, 90, 138, 0.4) !important;
-    border-color: #0d5a8a !important;
-    color: #ffffff !important;
-  }
-
-/* Homepage Stats Cards Text Color Override - High Specificity */
-.wp-block-group.stat-card h3,
-.wp-block-group.stat-card p {
-  color: #7497CE !important;
-}
-
-/* Additional override for any nested elements */
-.wp-block-group.stat-card h3,
-.wp-block-group.stat-card p,
-.wp-block-group.stat-card .wp-block-heading,
-.wp-block-group.stat-card .wp-block-paragraph {
-  color: #7497CE !important;
-}
-
-/* Digital Marketing Services Grid Layout */
-.wp-block-group.digital-marketing-services {
-  display: grid !important;
-  grid-template-columns: auto auto auto !important; /* Changed to auto columns for tighter layout */
-  gap: 2px !important; /* Even smaller gap to bring elements closer */
-  align-items: start !important;
-  max-width: 100% !important;
-  width: 100% !important;
-  margin: 0 auto !important;
-  padding: 0 20px !important; /* Reduced padding to use more space */
-  justify-content: center !important; /* Center the grid */
-}
-
-/* Expand on larger screens */
-@media (min-width: 1400px) {
-  .wp-block-group.digital-marketing-services {
-    gap: 4px !important; /* Reduced from 6px */
-    padding: 0 40px !important;
-  }
-}
-
-@media (min-width: 1600px) {
-  .wp-block-group.digital-marketing-services {
-    gap: 6px !important; /* Reduced from 8px */
-    padding: 0 60px !important;
-  }
-}
-
-  .wp-block-group.left-services-column,
-  .left-services-column {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important; /* Reduced from 12px */
-    grid-column: 1 !important;
-    min-width: unset !important;
-    width: auto !important;
-    flex: 1 !important;
-    justify-content: flex-start !important;
-    align-items: flex-end !important; /* Align items to the right edge of left column */
-    padding-right: 0 !important; /* Remove right padding to get closer to image */
-  }
-
-  .wp-block-group.central-image,
-  .central-image {
-    grid-column: 2 !important;
-    width: 100% !important;
-    max-width: 450px !important;
-    height: 100% !important;
-    min-height: 500px !important;
-    display: flex !important;
-    align-items: center !important;
-  }
-
-  /* Expand central image on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.central-image,
-    .central-image {
-      max-width: 550px !important;
-      min-height: 600px !important;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.central-image,
-    .central-image {
-      max-width: 650px !important;
-      min-height: 700px !important;
-    }
-  }
-
-  .wp-block-group.central-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    border-radius: 12px !important;
-  }
-
-  .wp-block-group.right-services-column,
-  .right-services-column {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important; /* Reduced from 12px for even tighter spacing */
-    grid-column: 3 !important;
-    min-width: unset !important; /* Remove min-width constraint */
-    width: auto !important; /* Auto width instead of fixed */
-    flex: 1 !important; /* Allow column to flex */
-  }
-
-  /* Digital Marketing Service Cards */
-  .wp-block-group.digital-marketing-services .service-card {
-    background-color: rgba(13, 41, 64, 0.5) !important;
-    border: 1px solid #20364E !important;
-    border-radius: 12px !important;
-    padding: 24px !important;
-    transition: all 0.3s ease !important;
-    min-height: 160px !important;
-    box-sizing: border-box !important;
-    width: 100% !important; /* Ensure cards take full width of their column */
-  }
-
-  /* Make service cards bigger on larger screens */
-  @media (min-width: 1400px) {
-    .wp-block-group.digital-marketing-services .service-card {
-      padding: 28px !important;
-      min-height: 180px !important;
-    }
-  }
-
-  @media (min-width: 1600px) {
-    .wp-block-group.digital-marketing-services .service-card {
-      padding: 32px !important;
-      min-height: 200px !important;
-    }
-  }
-
-  /* Make left column service cards align properly */
-  .wp-block-group.left-services-column .service-card,
-  .left-services-column .service-card {
-    width: 100% !important;
-  }
-
-  .wp-block-group.digital-marketing-services .service-card:hover {
-    background-color: rgba(13, 41, 64, 0.8) !important;
-    border-color: #0d5a8a !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  .wp-block-group.digital-marketing-services .service-icon {
-    background-color: #0d5a8a !important;
-    color: #ffffff !important;
-    width: 48px !important;
-    height: 48px !important;
-    border-radius: 8px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1.5rem !important;
-  }
-
-  .wp-block-group.digital-marketing-services .service-card h3 {
-    color: #ffffff !important;
-    font-size: 1.125rem !important;
-    margin-bottom: 12px !important;
-  }
-
-  .wp-block-group.digital-marketing-services .service-card p {
-    color: #9fb6c8 !important;
-    font-size: 0.875rem !important;
-    line-height: 1.6 !important;
-  }
-
-  /* Responsive Layout for Digital Marketing */
-  @media (max-width: 1024px) {
-    .wp-block-group.digital-marketing-services {
-      grid-template-columns: 1fr !important;
-      gap: 16px !important;
-    }
-
-    .wp-block-group.left-services-column,
-    .wp-block-group.central-image,
-    .wp-block-group.right-services-column {
-      grid-column: 1 !important;
-    }
-
-    .wp-block-group.central-image {
-      width: 100% !important;
-      max-width: 600px !important;
-      min-height: 300px !important;
-      margin: 0 auto !important;
-    }
-  }
-
-  @media (max-width: 767px) {
-    .technology-tags ul {
-      grid-template-columns: 1fr 1fr !important;
-      gap: 8px !important;
-    }
-
-    .technology-tags .tech-tag {
-      font-size: 0.75rem !important;
-      padding: 6px 10px !important;
-      min-height: 36px !important;
-    }
-
-    .wp-block-group.digital-marketing-services .service-card {
-      padding: 16px !important;
-    }
-
-    .wp-block-group.central-image {
-      min-height: 250px !important;
-    }
-  }
-
-  /* Technology Tags Styles - Simple like Digital Marketing */
-  .technology-tags {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    padding: 40px 20px !important;
-  }
-
-  .technology-tags .tech-list {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)) !important;
-    gap: 12px !important;
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    max-width: 800px !important;
-    width: 100% !important;
-  }
-
-  .technology-tags .tech-list li {
-    background: #2B3545 !important;
-    color: white !important;
-    padding: 12px 16px !important;
-    border-radius: 8px !important;
-    text-align: center !important;
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
-    border: 1px solid #3A4556 !important;
-    transition: all 0.3s ease !important;
-    min-height: 48px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-  }
-
-  .technology-tags .tech-list li:hover {
-    background: #3A4556 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
-  }
-
-  /* Responsive adjustments for technology tags */
-  @media (max-width: 768px) {
-    .technology-tags .tech-list {
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
-      gap: 8px !important;
-    }
-
-    .technology-tags .tech-list li {
-      font-size: 0.8rem !important;
-      padding: 10px 12px !important;
-      min-height: 40px !important;
-    }
+  
+  .wp-block-group.service-card .wp-block-image figure[style*="background-color"] {
+    background-color: #6A6B7D !important;
   }
 }
