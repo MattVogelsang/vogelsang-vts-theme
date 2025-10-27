@@ -841,17 +841,17 @@
     background-color: #6A6B7D !important;
   }
   
-  /* Homepage Service Cards - Fix narrow width issue */
+  /* Homepage Service Cards - Match local appearance */
   .wp-block-columns.homepage-services-container {
-    max-width: 1400px !important;
+    max-width: 1600px !important;
     margin: 0 auto !important;
-    padding: 0 20px !important;
+    padding: 0 40px !important;
   }
   
   .wp-block-columns.homepage-services-container .wp-block-column {
     flex: 1 !important;
-    min-width: 300px !important;
-    max-width: 400px !important;
+    min-width: 350px !important;
+    max-width: 500px !important;
   }
   
   .wp-block-columns.homepage-services-container .wp-block-group.service-card {
@@ -877,6 +877,40 @@
     font-size: 0.9rem !important;
     line-height: 1.6 !important;
     margin-bottom: 16px !important;
+  }
+  
+  /* Responsive adjustments for different screen sizes */
+  @media (min-width: 768px) {
+    .wp-block-columns.homepage-services-container {
+      padding: 0 60px !important;
+    }
+    
+    .wp-block-columns.homepage-services-container .wp-block-column {
+      min-width: 320px !important;
+      max-width: 450px !important;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .wp-block-columns.homepage-services-container {
+      padding: 0 80px !important;
+    }
+    
+    .wp-block-columns.homepage-services-container .wp-block-column {
+      min-width: 350px !important;
+      max-width: 500px !important;
+    }
+  }
+  
+  @media (min-width: 1400px) {
+    .wp-block-columns.homepage-services-container {
+      padding: 0 100px !important;
+    }
+    
+    .wp-block-columns.homepage-services-container .wp-block-column {
+      min-width: 380px !important;
+      max-width: 550px !important;
+    }
   }
   
   /* Force stats card colors to be blue - Higher specificity */
